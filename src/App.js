@@ -6,25 +6,22 @@ let count = 0;
 let res = "";
 const App = () => {
   const [timer, setTimer] = useState("");
-  const [isBegin, setIsBegin] = useState(false);
 
   const begin = () => {
-    setInterval(() => {
-      count++;
-      res += "  " + count;
-      setTimer(res);
-      console.log(count);
-      if (count === 5) {
-        count = 0;
-        res = "";
-      }
-    }, 1000);
+    res = ""; 
+    res += "  " + count;
+    count++;
+    setTimer(res);
+    console.log(count);
+    if (count === 6) {
+      count = 0;
+    }
   };
 
-  const reset = () => {
-    count = 0;
-    res = "";
-  };
+  const onClick = () => {
+    begin();
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -33,11 +30,7 @@ const App = () => {
         <button
           style={{ padding: "6px 20px", fontSize: "18px" }}
           onClick={() => {
-            if (isBegin) reset();
-            else {
-              setIsBegin(true);
-              begin();
-            }
+            onClick();
           }}
         >
           Click
