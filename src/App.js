@@ -1,31 +1,23 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { useState } from "react";
 
-let count = 0;
-let res = "";
 const App = () => {
-  const [timer, setTimer] = useState("");
+  const [count, setCount] = useState(0);
 
   const begin = () => {
-    res = ""; 
-    res += "  " + count;
-    count++;
-    setTimer(res);
-    console.log(count);
-    if (count === 6) {
-      count = 0;
+    setCount(count+1);
+    if (count === 5) {
+      setCount(0);
     }
   };
 
-  const onClick = () => {
+  const onClick = () => { 
     begin();
   }
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>Hello React</p>
         <button
           style={{ padding: "6px 20px", fontSize: "18px" }}
@@ -35,7 +27,7 @@ const App = () => {
         >
           Click
         </button>
-        <pre>{timer}</pre>
+        <pre>{count}</pre>
       </header>
     </div>
   );
