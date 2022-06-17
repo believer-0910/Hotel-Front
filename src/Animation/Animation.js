@@ -3,7 +3,7 @@ import { useState } from "react";
  const Animation = () => {
     const [count, setCount] = useState(0);
     
-    const handleClick = () => {
+    const onClickAction = () => {
         
         setCount(count+1);
 
@@ -16,7 +16,7 @@ import { useState } from "react";
         <div> 
             <button
                 style={{ padding: "6px 20px", fontSize: "18px" }}
-                onClick={() => handleClick()}
+                onClick={onClickAction}
             >
                 Click
             </button>
