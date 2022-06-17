@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const onClickAction = () => {
+
+    setCount(count+1);
+
+    if (count === 5) {
+      setCount(0);
+    }
+    
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+        <p>Hello React</p>
+        <button
+          style={{ padding: "6px 20px", fontSize: "18px" }}
+          onClick={onClickAction}
         >
-          Learn React
-        </a>
+          Click
+        </button>
+        <pre>{count}</pre>
       </header>
     </div>
   );
-}
+};
 
 export default App;
