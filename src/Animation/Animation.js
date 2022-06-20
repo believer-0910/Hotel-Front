@@ -10,13 +10,13 @@ import { useState } from "react";
         if (count === 5) {
             setCount(0);
         }
-        
+
     }
     return (
         <div> 
             <button
                 style={{ padding: "6px 20px", fontSize: "18px" }}
-                onClick={onClickAction}
+                onClick={onClickAction} 
             >
                 Click
             </button>
